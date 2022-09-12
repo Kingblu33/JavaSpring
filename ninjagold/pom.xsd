@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="properties" />
+  <xs:element name="dependencies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="dependency" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="groupId" type="xs:string" />
+              <xs:element name="artifactId" type="xs:string" />
+              <xs:element name="scope" minOccurs="0" type="xs:string" />
+              <xs:element name="optional" minOccurs="0" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dependency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="groupId" type="xs:string" />
+        <xs:element name="artifactId" type="xs:string" />
+        <xs:element name="version" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="build">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="plugins">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="plugin">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="groupId" type="xs:string" />
+                    <xs:element name="artifactId" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="project" />
+</xs:schema>
